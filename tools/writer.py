@@ -18,7 +18,7 @@ def log(console, severity, message):
     FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
     logging.basicConfig(filename='.logs/{}.log'.format(_time), format=FORMAT, level=logging.INFO, datefmt="[%X]")
     log = logging.getLogger("rich")
-    log.addHandler(RichHandler())
+    # log.addHandler(RichHandler())
 
     if severity == 'info':
         print_info(log, message)
