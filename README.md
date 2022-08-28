@@ -3,7 +3,7 @@
 
 ## Inspiration
 
-A good TUI makes any terminal user happy. I was inspired to make a dashboard specifically for myself when looking at [DexUI](https://github.com/seenaburns/dex-ui).
+A good TUI makes any terminal user happy. I was inspired to make a dashboard specifically for myself when looking at [DexUI](https://github.com/seenaburns/dex-ui). In the end, I hope for this project to allow me to teach myself how to use new tools in cyber security and elsewhere by attempting to abstract them into this dashboard.
 
 ## Purpose
 
