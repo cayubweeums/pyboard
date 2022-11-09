@@ -12,7 +12,7 @@ from rich.panel import Panel
 from rich.console import Console, RenderableType
 from rich.align import Align
 from rich import box, print
-from tools import writer
+from tools import logger
 
 
 install()
@@ -72,18 +72,18 @@ class Toggleables(Widget, can_focus=True):
                 if len(result.stdout) > 0:
                     umount = subprocess.Popen(["sudo", "umount", "cayubs-server"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     umount.wait()
-                    writer.log(console, 'info', f'cayubs-server unmounted \n{umount.stdout}')
+                    logger.log(console, 'info', f'cayubs-server unmounted \n{umount.stdout}')
 
                     vpn_down = subprocess.run(["sudo", "wg-quick", "down", "peer2"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-                    writer.log(console, 'info', f'VPN toggled off \n{vpn_down.stdout}')
+                    logger.log(console, 'info', f'VPN toggled off \n{vpn_down.stdout}')
 
                 else:
                     vpn_up = subprocess.run(["sudo", "wg-quick", "up", "peer2"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-                    writer.log(console, 'info', f'VPN toggled on \n{vpn_up.stdout}')
+                    logger.log(console, 'info', f'VPN toggled on \n{vpn_up.stdout}')
                 
                     mount = subprocess.Popen(["sudo", "mount", "-a"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                     mount.wait()
-                    writer.log(console, 'info', f'cayubs-server mounted \n{mount.stdout}')
+                    logger.log(console, 'info', f'cayubs-server mounted \n{mount.stdout}')
 
 
 
